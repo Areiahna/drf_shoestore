@@ -28,14 +28,14 @@ class Shoetype (models.Model):
 
 class ShoeColor (models.Model):
     COLOR_CHOICES = (
-        ('R', 'RED'),
-        ('O', 'ORANGE'),
-        ('Y', 'YELLOW'),
-        ('G', 'GREEN'),
-        ('B', 'BLUE'),
-        ('I', 'INDIGO'),
-        ('V', 'VIOLET'),
-        ('W', 'WHITE'),
+        ('RED', 'RED'),
+        ('ORAN', 'ORANGE'),
+        ('YLLW', 'YELLOW'),
+        ('GR', 'GREEN'),
+        ('BLU', 'BLUE'),
+        ('IND', 'INDIGO'),
+        ('VIOL', 'VIOLET'),
+        ('WHT', 'WHITE'),
         ('BL', 'BLACK')
     )
 
@@ -48,7 +48,7 @@ class ShoeColor (models.Model):
 
 
 class Shoe (models.Model):
-    size = models.IntegerField(default=0)
+    size = models.PositiveIntegerField(default=0)
     brand_name = models.CharField(max_length=20)
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
     color = models.ForeignKey(ShoeColor, on_delete=models.CASCADE)
